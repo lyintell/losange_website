@@ -1,0 +1,1 @@
+1. La verification de l identifiant et du telephone se fait a travers Supabase. Il y a une table sur supabase que je voudrais comparer les infos identifiant et telephone contre. Aussi voir dans la table si certaines conditions sont satisfaites. Comment faire de facon securitaire? La base de donnees supabase existe deja avec toute les tables.
