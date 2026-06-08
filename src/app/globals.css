@@ -151,6 +151,65 @@ input {
   animation-play-state: paused;
 }
 
+.menu-button {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--charcoal);
+  cursor: pointer;
+}
+
+.menu-button svg {
+  width: 22px;
+  height: 22px;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+.mobile-menu-panel {
+  display: grid;
+  gap: 8px;
+  padding-top: 10px;
+  padding-bottom: 14px;
+}
+
+.mobile-menu-link {
+  min-height: 50px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--ink-soft);
+  font-weight: 900;
+}
+
+.mobile-menu-link.active {
+  background: var(--charcoal);
+  color: var(--white);
+}
+
+.mobile-menu-link svg {
+  width: 19px;
+  height: 19px;
+  flex: 0 0 auto;
+}
+
+.mobile-menu-download {
+  background: var(--orange);
+  color: var(--white);
+  border-color: var(--orange);
+}
+
 @keyframes download-flash {
   0%,
   100% {
@@ -867,17 +926,17 @@ input {
   }
 
   .icon-button {
-    width: 44px;
-    padding: 0;
+    display: none;
   }
 
-  .icon-button span {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
+  .menu-button {
+    display: inline-flex;
+  }
+
+  .mobile-menu.open {
+    display: block;
+    border-top: 1px solid var(--line);
+    background: rgba(250, 247, 244, 0.98);
   }
 
   .hero-copy h1,
