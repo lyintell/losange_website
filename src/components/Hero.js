@@ -5,7 +5,6 @@ import VideoPopup from "@/components/VideoPopup";
 
 export default function Hero() {
   const heroVideo = siteContent.heroVideo;
-  const firstTutorial = siteContent.tutorials[0];
 
   return (
     <section className="hero">
@@ -44,12 +43,6 @@ export default function Hero() {
               </div>
             )}
           </div>
-          {firstTutorial?.video ? (
-            <Link className="hero-video-link" href={`/videos?play=${firstTutorial.id}`}>
-              <PlayCircle aria-hidden="true" />
-              Voir les vidéos
-            </Link>
-          ) : null}
         </div>
       </div>
     </section>
