@@ -1,3 +1,20 @@
+const localVideoBase = process.env.NODE_ENV === "development" ? "/media/videos" : "";
+
+function normalizeGoogleDriveVideoUrl(url) {
+  const trimmedUrl = String(url ?? "").trim();
+
+  if (!trimmedUrl.includes("drive.google.com")) {
+    return trimmedUrl;
+  }
+
+  const fileId = trimmedUrl.match(/\/file\/d\/([^/]+)/)?.[1] ?? trimmedUrl.match(/[?&]id=([^&]+)/)?.[1];
+
+  return fileId ? `https://drive.google.com/file/d/${fileId}/preview` : trimmedUrl;
+}
+
+const video1Url = normalizeGoogleDriveVideoUrl(process.env.NEXT_PUBLIC_VIDEO_1_URL) || (localVideoBase ? `${localVideoBase}/v1.mp4` : "");
+const video2Url = normalizeGoogleDriveVideoUrl(process.env.NEXT_PUBLIC_VIDEO_2_URL) || (localVideoBase ? `${localVideoBase}/v2.mp4` : "");
+
 export const siteContent = {
   brand: {
     name: "Losange",
@@ -17,8 +34,8 @@ export const siteContent = {
     note: "Après validation de vos informations, le téléchargement démarre automatiquement depuis votre téléphone.",
   },
   heroVideo: {
-    src: "",
-    poster: "/media/screenshots/chantier.svg",
+    src: "/media/videos/Intro.mp4",
+    poster: "/media/screenshots/sc1.jpg",
     title: "Vidéo de présentation Losange",
   },
   highlights: [
@@ -29,35 +46,40 @@ export const siteContent = {
   ],
   screenshots: [
     {
-      title: "Accueil chantier",
-      image: "/media/screenshots/chantier.svg",
-      alt: "Aperçu de l'écran chantier de Losange",
+      title: "I - Accueil",
+      image: "/media/screenshots/sc1.jpg",
+      alt: "Capture d'écran Losange étape 1",
     },
     {
-      title: "Saisie des cotes",
-      image: "/media/screenshots/saisie.svg",
-      alt: "Aperçu de l'écran de saisie des dimensions de Losange",
+      title: "II - Choix du métier",
+      image: "/media/screenshots/sc2.jpg",
+      alt: "Capture d'écran Losange étape 2",
     },
     {
-      title: "Devis estimatif",
-      image: "/media/screenshots/devis.svg",
-      alt: "Aperçu de l'écran devis de Losange",
+      title: "III - Dimensions / relevés",
+      image: "/media/screenshots/sc4.jpg",
+      alt: "Capture d'écran Losange étape 3",
+    },
+    {
+      title: "IV - Devis",
+      image: "/media/screenshots/scxx.jpg",
+      alt: "Capture d'écran Losange étape 4",
     },
   ],
   tutorials: [
     {
-      title: "Créer un chantier",
-      duration: "2 min",
-      text: "Ajouter un client, ouvrir un chantier et préparer le premier relevé.",
-      poster: "/media/screenshots/chantier.svg",
-      video: "",
+      id: "v1",
+      title: "Nouveau chantier et dimensions",
+      duration: "Vidéo 1",
+      poster: "/media/screenshots/sc1.jpg",
+      video: video1Url,
     },
     {
-      title: "Saisir un relevé",
-      duration: "3 min",
-      text: "Choisir un ouvrage, entrer les dimensions et vérifier les quantités.",
-      poster: "/media/screenshots/saisie.svg",
-      video: "",
+      id: "v2",
+      title: "Information chantier et devis",
+      duration: "Vidéo 2",
+      poster: "/media/screenshots/sc2.jpg",
+      video: video2Url,
     },
   ],
   plans: [

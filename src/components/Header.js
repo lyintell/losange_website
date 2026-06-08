@@ -2,12 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Download, Home, ReceiptText } from "lucide-react";
+import { Download, Home, PlayCircle, ReceiptText } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { siteContent } from "@/content/site";
 
 const links = [
   { href: "/", label: "Accueil", Icon: Home },
+  { href: "/videos", label: "Vidéos", Icon: PlayCircle },
   { href: "/tarifs", label: "Tarifs", Icon: ReceiptText },
 ];
 

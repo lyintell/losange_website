@@ -1,5 +1,6 @@
 import { CheckCircle2 } from "lucide-react";
 import Hero from "@/components/Hero";
+import MediaShowcase from "@/components/MediaShowcase";
 import SectionHeader from "@/components/SectionHeader";
 import { siteContent } from "@/content/site";
 
@@ -25,6 +26,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <MediaShowcase />
 
       <section className="section contact-band" id="contact">
         <div className="container contact-layout">

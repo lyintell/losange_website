@@ -29,3 +29,14 @@ pnpm-debug.log*
 # system files
 .DS_Store
 Thumbs.db
+
+# local media staging; production media lives in public/media
+prompts/files/
+
+# heavy tutorial videos are hosted externally in production
+public/media/videos/v1.mp4
+public/media/videos/v2.mp4
+
+# keep only the production APK name tracked when needed
+prompts/app_downloads/*.apk
+!prompts/app_downloads/losange.apk

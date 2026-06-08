@@ -78,6 +78,9 @@ export async function POST(request) {
       headers: {
         "Content-Type": "application/vnd.android.package-archive",
         "Content-Disposition": 'attachment; filename="losange.apk"',
+        "Cache-Control": "no-store, max-age=0",
+        "Pragma": "no-cache",
+        "Expires": "0",
         "Content-Length": String(apk.byteLength),
       },
     });

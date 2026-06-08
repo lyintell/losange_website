@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { ArrowRight, PlayCircle } from "lucide-react";
 import { siteContent } from "@/content/site";
+import VideoPopup from "@/components/VideoPopup";
 
 export default function Hero() {
   const heroVideo = siteContent.heroVideo;
+  const firstTutorial = siteContent.tutorials[0];
 
   return (
     <section className="hero">
@@ -28,9 +30,13 @@ export default function Hero() {
         <div className="hero-visual" aria-label="Vidéo de présentation de Losange">
           <div className="hero-video-frame">
             {heroVideo.src ? (
-              <video controls playsInline poster={heroVideo.poster} preload="metadata">
-                <source src={heroVideo.src} type="video/mp4" />
-              </video>
+              <VideoPopup
+                src={heroVideo.src}
+                poster={heroVideo.poster}
+                title={heroVideo.title}
+                className="hero-video-popup"
+                previewAutoPlay
+              />
             ) : (
               <div className="hero-video-placeholder">
                 <PlayCircle aria-hidden="true" />
@@ -38,6 +44,12 @@ export default function Hero() {
               </div>
             )}
           </div>
+          {firstTutorial?.video ? (
+            <Link className="hero-video-link" href={`/videos?play=${firstTutorial.id}`}>
+              <PlayCircle aria-hidden="true" />
+              Voir les vidéos
+            </Link>
+          ) : null}
         </div>
       </div>
     </section>
