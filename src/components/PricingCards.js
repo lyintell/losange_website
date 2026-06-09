@@ -14,8 +14,16 @@ export default function PricingCards({ compact = false }) {
             {plan.featured ? <strong>Populaire</strong> : null}
           </div>
           <div className="price-line">
-            <strong>{plan.price}</strong>
-            <span>{plan.period}</span>
+            <div className={plan.originalPrice ? "price-main price-main-badge price-main-promo" : "price-main price-main-badge price-main-neutral"}>
+              <strong>{plan.price}</strong>
+              <span>{plan.period}</span>
+            </div>
+            {plan.originalPrice && plan.promotion ? (
+              <div className="price-promo">
+                <span className="old-price">{plan.originalPrice}</span>
+                <span>{plan.promotion}</span>
+              </div>
+            ) : null}
           </div>
           <p className="price-summary">{plan.summary}</p>
           <ul>

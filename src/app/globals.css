@@ -708,7 +708,18 @@ input {
 
 .price-line {
   margin: 18px 0 10px;
-  min-height: 76px;
+  min-height: 98px;
+}
+
+.price-main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.price-main-badge {
+  align-items: center;
 }
 
 .price-line strong {
@@ -717,9 +728,65 @@ input {
   line-height: 1;
 }
 
+.price-main-badge strong {
+  display: inline-grid;
+  place-items: center;
+  width: 148px;
+  height: 148px;
+  padding: 18px;
+  border-radius: 50%;
+  font-size: 1.45rem;
+  line-height: 1.05;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.price-main-neutral strong {
+  background: var(--line);
+  color: var(--ink);
+  box-shadow: 0 18px 34px rgba(21, 32, 39, 0.12);
+}
+
+.price-main-promo strong {
+  background: var(--orange);
+  color: var(--white);
+  box-shadow: 0 18px 34px rgba(255, 86, 36, 0.32);
+}
+
 .price-line span {
   color: var(--ink-soft);
   font-weight: 700;
+}
+
+.price-promo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.price-promo .old-price {
+  position: relative;
+  color: var(--ink-muted);
+  font-size: 1.08rem;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.price-promo .old-price::after {
+  content: "";
+  position: absolute;
+  left: -4px;
+  right: -4px;
+  top: 52%;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--orange);
+  transform: rotate(-6deg);
 }
 
 .price-card ul {

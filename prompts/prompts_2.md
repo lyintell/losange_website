@@ -32,3 +32,6 @@ Enleve Tutoriel
 9. 
 Update .gitignore file.
 Je veux utiliser les videos pour la production (vercel/github). Comment faire et mettre a jour mon site pour
+
+10.
+Dans pricing, applique une reduction de 5000 (promotion de lancement)

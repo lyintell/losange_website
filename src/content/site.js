@@ -100,7 +100,9 @@ export const siteContent = {
     },
     {
       name: "Pro",
-      price: "10 000 FCFA",
+      price: "5 000 FCFA",
+      originalPrice: "10 000 FCFA",
+      promotion: "Promotion de lancement",
       period: "/ mois + 1000 FCFA/ utilisateur",
       summary: "Pour les entreprises et professionnels qui veulent aller plus loin.",
       cta: "Choisir Pro",
